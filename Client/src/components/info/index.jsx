@@ -1,5 +1,5 @@
 import './index.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import BodyDisease from '../formEach/bodyDisease/index';
 import SkinDisease from '../formEach/skinDisease/index';
 import LegDisease from '../formEach/legDisease/index';
@@ -12,15 +12,7 @@ import BrainDisease from '../formEach/brainDisease/index';
 import Spinner from '../Spinner/Spinner';
 import axios from 'axios';
 
-import {
-    addDoc,
-    collection,
-    serverTimestamp,
-  } from "firebase/firestore";
-  
-  import { db } from "../../firebase.config.js";
 import { getAuth } from 'firebase/auth';
-import { toast } from 'react-toastify';
 
 const val=[
     {
@@ -1486,27 +1478,9 @@ const Info = ({setSymptoms, setPredictions}) =>
                     }
                 }
             });
-
-            // setPredictions([m1, m2]);
-            // setPredictions([m1, m2, m3, m4]);
-            // console.log(m1,info1)
-            // console.log(m2,info2)
-            // console.log(m3,info3)
-            // console.log(m4,info4)
-            // handleLoading();
-            // setResultDisplay("block");
         }
         setLoading(false);
     }
-
-    // console.log('m1', m1)
-    // console.log('m2', m2)
-    
-    // console.log(m1,info1)
-    // console.log(m2,info2)
-    // console.log(m3,info3)
-    // console.log(m4,info4)
-
 
     if(loading) return <Spinner />
 
@@ -1717,41 +1691,6 @@ const Info = ({setSymptoms, setPredictions}) =>
                 Submit Info
             </button>
         </div>
-        {/* {
-            loading ? (
-                // <div className="loading-inner">
-                    <Spinner />
-                // </div>
-            ):(
-                <>
-                <div className="result-inner" style={{display:resultDisplay}}>
-                    <div className='result-major'>
-                        <div className='result-major-left'>
-                            <div className='result-major-left-up'>
-                                Most Accurate Model
-                            </div>
-                            <div className='result-major-left-bottom'>
-                                {m1}
-                            </div>
-                        </div>
-                        <div className='result-major-right'>
-                            <div className='result-major-right-up'>
-                                <span style={{color:"red"}}>Info{'\u00A0'}{'\u00A0'}</span>{info1}
-                            </div>
-                            <div className='result-major-right-down'>
-                                <span style={{color:"green"}}>Sol{'\u00A0'}{'\u00A0'}</span>{rem1}
-                            </div>
-                        </div>
-                    </div>
-                    <div className='get-remedies'>
-                        <div className='get-remedies-button' onClick={()=>{props.handleRemedies({obj:{m1,info1,rem1,img1,hosp}})}}>
-                            Get Remedies
-                        </div>
-                    </div>
-                </div>
-                
-                </>
-            )} */}
     </div>
 
     </>

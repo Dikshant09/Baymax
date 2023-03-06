@@ -37,7 +37,7 @@
 
 import { getAuth } from "firebase/auth";
 import React from "react";
-import { useState } from 'react';
+import { useState } from "react";
 // import image from '././assets/one-click-Checkup.jpg';
 import one from "../../assets/1.jpg";
 import two from "../../assets/2.jpg";
@@ -68,8 +68,6 @@ const Home = () => {
     },
   ];
 
-  const [loading, setLoading] = useState(false);
-
   return (
     <div className="home-outer-container">
       {homeItems.map((item, index) => {
@@ -79,8 +77,10 @@ const Home = () => {
           </div>
         );
       })}
-      <CustomButton text={'Get Started'} route={ auth?.currentUser ? 'predict' : '/signup'}/>
-      {/* <Footer/> */}
+      <CustomButton
+        text={"Get Started"}
+        route={auth?.currentUser ? "predict" : "/signup"}
+      />
     </div>
   );
 };

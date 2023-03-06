@@ -8,9 +8,6 @@ const HomeItem = ({ item, index }) => {
     <div className='homeItem-outer-container'>
       <div className='homeItem-container'>
         <div className={`homeItem-parent-container ${index % 2 === 0 ? 'flex-reverse' : ''} `}>
-          {/* <div className='home-item-image' style={{ width: '1000px', height: '1000px', backgroundImage:`url(${image})`}} >
-
-          </div> */}
           <img src={image} className={`home-item-image ${large ? 'image-large' : ''}`} alt="" />
           <div className={`home-item-text ${index % 2 === 0 ? 'flex-reverse' : ''}`}>
             <div className='home-text'>{text}</div>

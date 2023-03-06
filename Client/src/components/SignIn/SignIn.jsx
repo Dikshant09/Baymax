@@ -2,8 +2,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState, useEffect, useContext } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
-// import { useSelector, useDispatch } from 'react-redux';
-// import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../Spinner/Spinner";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../OAuth/OAuth";
