@@ -17,7 +17,7 @@
 Model is deployed on Hugging spaces using Gradio App.
 
 <br />
-#### POST Request
+####POST Request
 
 Input Payload
 ```yaml
