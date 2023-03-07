@@ -14,10 +14,9 @@
 - Google Account
 
 ### ML Model <a href="https://dikshant09-disease-prediction-api.hf.space/run/predict">API</a>
-Model is deployed on Hugging spaces using Gradio App.
+Model is deployed on Hugging spaces using Gradio App. <br>
 
-<br />
-####POST Request
+#### POST Request
 
 Input Payload
 ```yaml
