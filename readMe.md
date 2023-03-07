@@ -1,5 +1,5 @@
 # BayMax  
-- It’s a web app which can predicts the disease based upon user symptoms. 
+- It’s a web app that can predict the disease based on user symptoms. 
 - The data we’re using is taken from the Kaggle.
 - Python & its libraries such as Pandas, Numpy, Matplotlib & Sklearn is used for model creation.
 - React is used as Frontend and Sass is used for Styling. 
