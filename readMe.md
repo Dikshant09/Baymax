@@ -13,6 +13,29 @@
 - Configured firebase.config.js file
 - Google Account
 
+## ML Model API
+Model is deployed on Hugging spaces using Gradio App.
+<br />
+
+Input Payload
+```yaml
+{
+  "data": [
+     string, // represents symptoms
+   ]
+}
+```
+
+Response Object
+```yaml
+{
+  "data": [
+    string, // represents predictions
+  ],
+  "duration": (float) // number of seconds to run function call
+}
+```
+
 ## How to run
 
 1. Create `firebase.config.js` file in Client/src
