@@ -13,7 +13,7 @@
 - Configured firebase.config.js file
 - Google Account
 
-## ML Model API
+## ML Model <a href="https://dikshant09-disease-prediction-api.hf.space/run/predict">API</a>
 Model is deployed on Hugging spaces using Gradio App.
 <br />
 
