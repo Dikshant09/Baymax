@@ -1,3 +1,150 @@
+// .profile-outer-container{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     height: 50%;
+//     // height: 90vh;
+//     width: 100%;
+//     // height: 100%;
+//     // background-color: red;
+// }
+
+// .profile-container{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     // background-color: aqua;
+
+//     height: 100%;
+//     width: 80%;
+// }
+
+// .profile{
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 2rem;
+
+
+//     @media screen and (max-width: 1115px){
+//         // width: 20%;
+//     }
+
+//     @media screen and (max-width: 750px){
+//         // width: 20%;
+//         // font-size: 0.7rem;
+//         // padding: 10px;
+//     }
+// }
+
+// .profile-area{
+//     display: flex;
+//     flex-direction: column;
+//     // padding: 1rem;
+// }
+// .profile-area-inner{
+//     display: flex;
+//     // flex-direction: column;
+// }
+
+// .profile-area-item{
+//     padding: 0.2rem;
+    
+//     @media screen and (max-width: 450px){
+//         padding: 0.1rem;
+//     }
+// }
+
+// .profile-heading{
+//     font-size: 1.5rem;
+
+    
+//     @media screen and (max-width: 750px){
+//         // width: 20%;
+//         font-size: 1.2rem;
+//         // padding: 10px;
+//     }
+  
+//     @media screen and (max-width: 450px){
+//         font-size: 1rem;
+//     }
+// }
+
+// .logout{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     width: 12.5%;
+//     height: 50%;
+//     border-radius: 8px;
+//     padding: 5px;
+//     cursor: pointer;
+
+//     // cursor: pointer;
+//     // font-family: 'Montserrat', sans-serif;
+//     // font-size: 1rem;
+//     // font-weight: 600;
+//     // color: #ffffff;
+//     color: black;
+//     &:hover{
+//         scale: 1.1;
+//         color: white;
+//         // color:#fcba03;
+//         background-color:#000000;
+//         border-radius: 8px;
+
+//         transition: background-color 0.3s ease-in-out 0s;
+//     }
+//     font-size: 1.5rem;
+//     font-weight: 600;
+//     // box-shadow: 2px 2px 2px 1px gray(0, 0, 0, 0.2);
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+//     // padding: 0.25rem 0.75rem;
+//     // border-radius: 1rem;
+
+//     @media screen and (max-width: 1115px){
+//         width: 20%;
+//     }
+
+//     @media screen and (max-width: 750px){
+//         width: 20%;
+//         font-size: 1rem;
+//         padding: 10px;
+//     }
+// }
+
+// .reports{
+//     display: flex;
+//     // justify-content: center;
+//     // align-items: center;
+
+
+//     flex-direction: column;
+//     // background-color: red;
+// }
+
+// .line{
+//     background-color: #000000;
+//     width: 100%;
+//     height: 0.2px;
+//     // margin-bottom: 1rem;
+// }
+
+// .heading-text{
+//     font-size: 2rem;
+
+//     // @media screen and (max-width: 1115px){
+//         // width: 20%;
+//     // }
+
+//     @media screen and (max-width: 750px){
+//         // width: 20%;
+//         font-size: 1.3rem;
+//         // padding: 10px;
+//     }
+// }
+
 .profile-outer-container{
     display: flex;
     align-items: center;
@@ -17,6 +164,11 @@
 
     height: 100%;
     width: 80%;
+
+    @media screen and (max-width: 450px){
+        // font-size: 1rem;
+        width: 100%;
+    }
 }
 
 .profile{
@@ -34,6 +186,18 @@
         // font-size: 0.7rem;
         // padding: 10px;
     }
+
+    @media screen and (max-width: 500px){
+        // font-size: 1rem;
+        width: 85%;
+        margin: 1.5rem;
+    }
+
+    @media only screen and (max-width: 550px) and (min-width: 455px) {
+        // font-size: 1rem;
+        width: 85%;
+        margin: 1.5rem;
+    }
 }
 
 .profile-area{
@@ -43,14 +207,38 @@
 }
 .profile-area-inner{
     display: flex;
+    align-items: center;
     // flex-direction: column;
 }
 
 .profile-area-item{
     padding: 0.2rem;
+    // margin-right: 2px;
+    // font-size: 17px;
+    margin-right: 2px;
     
-    @media screen and (max-width: 450px){
+    @media screen and (max-width: 455px){
         padding: 0.1rem;
+    }
+}
+
+.profile-area-item-2{
+    padding: 0.2rem;
+    display: flex;
+    justify-content: space-evenly;
+    @media screen and (max-width: 1400px){
+        font-size: 1.3rem;
+        // padding: 0.1rem;
+    }
+    
+    @media screen and (max-width: 700px){
+        font-size: 1rem;
+        // padding: 0.1rem;
+    }
+    @media screen and (max-width: 450px){
+        font-size: 15px;
+        padding: 0.1rem;
+        height: 100%;
     }
 }
 
@@ -108,9 +296,14 @@
     }
 
     @media screen and (max-width: 750px){
-        width: 20%;
+        width: 25%;
         font-size: 1rem;
         padding: 10px;
+    }
+
+    @media screen and (max-width: 501px){
+        width: 30%;
+        // font-size: 1rem;
     }
 }
 

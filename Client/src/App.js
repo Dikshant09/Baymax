@@ -6,14 +6,11 @@ import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import Predict from "./components/Predict/Predict";
 import Header from "./components/Header/Header";
-import Spinner from "./components/Spinner/Spinner";
 import SignIn from "./components/SignIn/SignIn";
-import Register from "./components/SignUp/SignUp";
 import SignUp from "./components/SignUp/SignUp";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/PrivateRoute";
-import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -34,7 +31,6 @@ function App() {
           <Route path="/predict" element={<Predict />} />
         </Route>
       </Routes>
-      {/* <Footer /> */}
       <ToastContainer />
     </Router>
   );

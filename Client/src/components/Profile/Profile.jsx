@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Spinner from "../Spinner/Spinner";
 import { getAuth } from "firebase/auth";
-import { FaDove, FaPowerOff, FaSearch, FaUser } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase.config.js";
 
 import { collection, query, where, orderBy, getDocs } from "firebase/firestore";
@@ -71,12 +70,12 @@ const Profile = () => {
           <div className="profile-area profile-heading">
             <div className="profile-area-inner">
               <div className="profile-area-item bold-bro">Name:</div>
-              <div className="profile-area-item">{name}</div>
+              <div className="profile-area-item-2">{name}</div>
             </div>
 
             <div className="profile-area-inner">
               <div className="profile-area-item bold-bro">Email:</div>
-              <div className="profile-area-item">{email}</div>
+              <div className="profile-area-item-2">{email}</div>
             </div>
           </div>
           <div className="logout" onClick={handleLogOut}>
