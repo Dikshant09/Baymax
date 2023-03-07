@@ -28,6 +28,16 @@ Input Payload
 }
 ```
 
+Response Object
+```yaml
+{
+  "data": [
+    string, // represents predictions
+  ],
+  "duration": (float) // number of seconds to run function call
+}
+```
+
 ## How to run
 
 1. Create `firebase.config.js` file in Client/src
