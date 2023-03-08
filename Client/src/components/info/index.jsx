@@ -1,5 +1,5 @@
 import './index.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import BodyDisease from '../formEach/bodyDisease/index';
 import SkinDisease from '../formEach/skinDisease/index';
 import LegDisease from '../formEach/legDisease/index';
@@ -1349,6 +1349,7 @@ const Info = ({setSymptoms, setPredictions}) =>
     const[rem2,setRem2]=useState("")
     const[rem3,setRem3]=useState("")
     const[rem4,setRem4]=useState("")
+    const [submitClick, setSubmitClick] = useState(false);
     // console.log(rem2,rem3,rem4);
     
     const handleSubmit = async(e) => {
@@ -1480,7 +1481,16 @@ const Info = ({setSymptoms, setPredictions}) =>
             });
         }
         setLoading(false);
+        setSubmitClick(true);
     }
+
+    // Automatic Smooth Scroll whenever we hit submit button
+    useEffect(() => {
+        if(submitClick){
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+        }
+      }, [submitClick])
+
 
     if(loading) return <Spinner />
 

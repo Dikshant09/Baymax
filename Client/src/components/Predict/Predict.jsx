@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
 import { toast } from "react-toastify";
 import CustomButton from "../CustomButton/CustomButton";
@@ -19,6 +19,13 @@ const Predict = () => {
 
   const [symptoms, setSymptoms] = useState(null);
   const [predictions, setPredictions] = useState(null);
+
+  // Automatic Smooth Scroll whenever we hit submit button
+  useEffect(() => {
+    if(symptoms){
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    }
+  }, [symptoms])
 
   const handleSave = async(e) => {
     e.preventDefault();
