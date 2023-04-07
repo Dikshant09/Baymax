@@ -8,6 +8,10 @@
 /.pnp
 .pnp.js
 
+# Enviornment Variables
+/Client/env
+.env
+
 # testing
 /coverage
 
