@@ -39,11 +39,11 @@ Response Object
 
 ## How to run
 
-1. Create `firebase.config.js` file in Client/src
+1. Create `firebase.config.js` file in `client/src/`
 
-Create a Firebase App using google account and then you will get below drive code & some API keys.
-<br>
-Ensure the API keys are configured in `.env` in this directory. It should include the following keys:
+    Create a Firebase App using google account and then you will get below drive code & some API keys.
+    <br>
+    Ensure the API keys are configured in `.env` in this directory. It should include the following keys:
 
 ```yaml
 import { getFirestore } from 'firebase/firestore';
@@ -63,8 +63,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
 ```
+2. Create `.env` file in `client/`
 
-2. Install dependencies and start the server
+    If you want another disease prediction API, replace the below key with that one.
+
+```yaml
+REACT_APP_BACKEND_API  =  'https://dikshant09-disease-prediction-api.hf.space/run/predict'
+```
+
+3. Install dependencies and start the localhost server.
 
 ```
 npm install
