@@ -65,7 +65,7 @@ export const db = getFirestore();
 ```
 2. Create `.env` file in `client/`
 
-    If you want another disease prediction API, replace the below key with that one.
+    If you want to use another disease prediction API, replace the below key with that one.
 
 ```yaml
 REACT_APP_BACKEND_API  =  'https://dikshant09-disease-prediction-api.hf.space/run/predict'
