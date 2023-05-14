@@ -1,16 +1,5 @@
-// import React, { useEffect } from 'react';
-// import { useState } from 'react';
 const LegDisease = (props) => 
 {
-    // const[user,setUser]=useState([])
-    // const userData=[
-    // {name:"Swollen Legs"},
-    // {name:"Prominent Veins On Calf"},]
-    
-    // useEffect(()=>{
-    // setUser(userData);
-    // },[]);
-
   return (
     <>
       <label className="checkContainer">Swollen Legs

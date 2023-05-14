@@ -7,28 +7,34 @@ const CustomButton = ({
   route,
   extraStyle,
   onClickHandle,
-  centerButton
+  centerButton,
 }) => {
-
   return (
     <div
       className={!extraStyle ? "buttonContainer" : "buttonContainer extraStyle"}
     >
-        <Link to={route}>
-          {
-            centerButton ? (
-              <button className="button" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} onClick={onClickHandle} >{text}</button>
-            ) : (
-
-              onClickHandle ? (
-                <button className="button" onClick={onClickHandle}>{text}</button>
-                ) : 
-                (
-                  <button className="button">{text}</button>
-                  )
-                  )
-          }
-        </Link>
+      <Link style={{ textDecoration: "none" }} to={route}>
+        {centerButton ? (
+          <button
+            className="button"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              textDecoration: "none",
+            }}
+            onClick={onClickHandle}
+          >
+            {text}
+          </button>
+        ) : onClickHandle ? (
+          <button className="button" onClick={onClickHandle}>
+            {text}
+          </button>
+        ) : (
+          <button className="button">{text}</button>
+        )}
+      </Link>
     </div>
   );
 };

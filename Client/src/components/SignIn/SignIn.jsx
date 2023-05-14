@@ -1,5 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Spinner from "../Spinner/Spinner";
@@ -7,21 +7,20 @@ import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../OAuth/OAuth";
 
 const SignIn = () => {
-  
   const navigate = useNavigate();
-  
+
   const [user, setUser] = useState({
-    email: '',
-    password: '',
-    currentName: '',
+    email: "",
+    password: "",
+    currentName: "",
     isLoading: false,
   });
-  
-  const { email, password, forgotPassword, currentName, isLoading, Data, setData } = user;
+
+  const { email, password, isLoading } = user;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     setUser((prevState) => ({
       ...prevState,
       [name]: value,
@@ -30,7 +29,7 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     setUser((prevState) => ({
       ...prevState,
       isLoading: true,
@@ -38,22 +37,19 @@ const SignIn = () => {
 
     try {
       const auth = getAuth();
-      const userCredential = await 
-      
-      signInWithEmailAndPassword(
+      const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
-      
 
       const User = userCredential.user;
       if (User) {
-        toast.success('Signed In Successfully');
+        toast.success("Signed In Successfully");
         navigate("/predict");
       }
     } catch (error) {
-      toast.error('Bad User Credentials');
+      toast.error("Bad User Credentials");
     }
 
     setUser((prevState) => ({
@@ -62,7 +58,7 @@ const SignIn = () => {
     }));
   };
 
-  if(isLoading) return <Spinner />;
+  if (isLoading) return <Spinner />;
 
   return (
     <>
@@ -96,20 +92,37 @@ const SignIn = () => {
               required
             />
           </div>
-          <div className="form-group">
-            <button className="btn btn-block" style={{padding: '8px'}}>Submit</button>
-          </div>
-          <div className="form-group">
-            <h3 className="text-center">Or</h3>
-            <Link to={'/signup'}>
-              <div className="btn btn-block" style={{padding: '8px'}}> Sign UP </div>
-            </Link>
-          </div>
-          <div className="form-group">
-            <h3 className="text-center">Or</h3>
-            <button className="btn btn-block" style={{padding: '8px'}} onClick={(e) => e.preventDefault()}> <OAuth text={'In'}/> </button>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className="buttonContainer">
+              <button className="button" style={{ margin: "20px" }}>
+                Submit
+              </button>
+            </div>
           </div>
         </form>
+        <h1 style={{ fontSize: "2rem", textAlign: "center" }}>Or</h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            margin: "-0.7rem",
+          }}
+        >
+          <div className="buttonContainer" style={{ margin: "0rem" }}>
+            <Link className="button" to={"/signup"} style={{ margin: "20px" }}>
+              Sign Up
+            </Link>
+            <button
+              className="button"
+              style={{ margin: "20px" }}
+              onClick={(e) => e.preventDefault()}
+            >
+              {" "}
+              <OAuth />{" "}
+            </button>
+          </div>
+        </div>
       </section>
     </>
   );

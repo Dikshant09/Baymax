@@ -668,24 +668,24 @@ const Info = ({ setSymptoms, setPredictions }) => {
     setLoading(true);
     e.preventDefault();
 
-    setPredictions(["Predicting........"]);
-    setSubmitClick(true);
-
+    
     var ans = "";
     var li = [];
-
+    
     for (var i = 0; i < 77; i++) {
       if (lis[i] === 1) {
         li.push(lis1[i]);
       }
     }
-
+    
     var len = li.length;
-
+    
     if (len === 0) {
       setDisplayModaleError("block");
       setDisplayModaleSuccess("none");
     } else {
+      setPredictions(["Predicting........"]);
+      setSubmitClick(true);
       setDisplayModaleSuccess("block");
       setDisplayModaleError("none");
 
@@ -1190,11 +1190,18 @@ const Info = ({ setSymptoms, setPredictions }) => {
               For better/accurate result provide more info
             </div>
           </div>
+          {/* <div className="success-bracket">
+            <div className="success-bracket-now">
+
+              Get the result in one click<br></br>
+              For better/accurate result provide more info
+            </div>
+          </div> */}
         </div>
-        <div className="info-button-outer">
-          <button className="info-button" onClick={handleSubmit}>
-            Submit Info
-          </button>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div className="buttonContainer">
+            <button className="button" onClick={handleSubmit} style={{margin: '20px'}}>Submit</button>
+        </div>
         </div>
       </div>
     </>

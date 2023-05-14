@@ -1,19 +1,5 @@
-// import React, { useEffect } from 'react';
-// import { useState } from 'react';
 const MouthDisease = (props) => 
 {
-    // const[user,setUser]=useState([])
-    // const userData=[
-    // {name:"Cough"},
-    // {name:"Ulcers On Tongue"},
-    // {name:"Patches In Throat"},
-    // {name:"Slurred Speech"},
-    // {name:"Breathlessness"},]
-    
-    // useEffect(()=>{
-    // setUser(userData);
-    // },[]);
-
   return (
     <>
       <label className="checkContainer">Cough

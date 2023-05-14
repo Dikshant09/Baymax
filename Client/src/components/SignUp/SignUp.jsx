@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import Spinner from "../Spinner/Spinner";
 
-import './../../../src/index.scss';
+import "./../../../src/index.scss";
 import OAuth from "../OAuth/OAuth";
 
 import { toast } from "react-toastify";
@@ -14,22 +14,21 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase.config.js";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  
+
   const [User, setUser] = useState({
-    email: '',
-    password: '',
-    password2: '',
-    name: '',
+    email: "",
+    password: "",
+    password2: "",
+    name: "",
     isLoading: false,
   });
 
-  const { email, password, password2, forgotPassword, name, isLoading } = User;
+  const { email, password, password2, name, isLoading } = User;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +40,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     setUser((prevState) => ({
       ...prevState,
       isLoading: true,
@@ -53,8 +52,9 @@ const SignUp = () => {
     }
 
     if (name === "") return toast.error("Please enter a name");
-    if (password.length < 6) return toast.error("Password must be at least 6 characters long");
-    if(password !== password2) return toast.error("Passwords do not match");
+    if (password.length < 6)
+      return toast.error("Password must be at least 6 characters long");
+    if (password !== password2) return toast.error("Passwords do not match");
 
     try {
       const auth = getAuth();
@@ -71,18 +71,17 @@ const SignUp = () => {
         displayName: name,
       });
 
-
       const formDataCopy = { ...User };
-      
+
       // Removing unrealevant fields
       delete formDataCopy.password;
       delete formDataCopy.password2;
       delete formDataCopy.isLoading;
 
-      formDataCopy.timestamp = serverTimestamp(); 
+      formDataCopy.timestamp = serverTimestamp();
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
-      
+
       toast.success("Signed Up Successfully");
       navigate("/predict");
     } catch (error) {
@@ -95,7 +94,7 @@ const SignUp = () => {
     }));
   };
 
-  if(isLoading) return <Spinner />;
+  if (isLoading) return <Spinner />;
 
   return (
     <>
@@ -151,19 +150,43 @@ const SignUp = () => {
               required
             />
           </div>
-          <div className="form-group">
-            <button className="btn btn-block" style={{padding: '8px'}}>Submit</button>
-          </div>
-          <div className="form-group">
-            <h3 className="text-center">Or</h3>
-            <Link to={'/signin'}>
-              <div className="btn btn-block" style={{padding: '8px'}}> Sign In </div>
-            </Link>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className="buttonContainer">
+              <button className="button" style={{ margin: "20px" }}>
+                Submit
+              </button>
+            </div>
           </div>
         </form>
-        <div className="form-group">
-            <h3 className="text-center">Or</h3>
-            <button className="btn btn-block" style={{padding: '8px'}} onClick={(e) => e.preventDefault()}><OAuth text={'Up'}/> </button>
+        <h1 style={{ fontSize: "2rem", textAlign: "center" }}>Or</h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            margin: "-0.7rem",
+          }}
+        >
+          <div
+            className="buttonContainer"
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              margin: "0rem",
+            }}
+          >
+            <Link className="button" to={"/signin"} style={{ margin: "20px" }}>
+              Sign In
+            </Link>
+            <button
+              className="button"
+              style={{ margin: "20px" }}
+              onClick={(e) => e.preventDefault()}
+            >
+              {" "}
+              <OAuth />{" "}
+            </button>
+          </div>
         </div>
       </section>
     </>

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  background: #1abc9c;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Navbar */
+
+.nav__wrapper {
+  position: sticky !important;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 55px !important;
+  border-radius: 51px;
+}
+
+.nav__brand {
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.3rem;
+  text-decoration: none !important;
+  &:hover{
+    scale: (1.1);
+  }
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+  // background-color: red; 
+}
+
+.nav__item{
+  // background-color: red; 
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.2rem;
+  color: black;
+  text-decoration: none !important;
+  &:hover{
+    color: #1abc9c;
+    background-color: black;
+    border-radius: 8px;
+  }
+}
+.nav_item_margin{
+  margin-top: 0.35rem;
+}
+
+.toggler__icon {
+  cursor: pointer;
+  display: none;
+}
+
+.toggler__icon div {
+  width: 25px;
+  height: 2px;
+  background: #ddd;
+  margin: 5px 0px;
+  transition: 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .toggler__icon {
+    display: block;
+  }
+  .nav__menu {
+    position: fixed;
+    background: #1abc9c;
+    flex-direction: column;
+    // top: 4vh;
+    width: 40%;
+    height: 90vh;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: 0.5s ease;
+  }
+}
+
+.nav__collapse {
+  transform: translateX(0%);
+  // height: 90vh;
+  top: 4vh;
+  height: 35vh;
+  width: 30vw;
+  border-radius: 10px;
+  gap:1rem;
+  padding: 10px;
+  @media screen and (max-width: 500px) {
+    width: 40vw;
+  }
+}
+
+/* Toggle Icon Animation */
+.toggle .line__1 {
+  transform: translate(-5px, 7px) rotate(-45deg);
+}
+.toggle .line__2 {
+  opacity: 0;
+}
+.toggle .line__3 {
+  transform: translate(-5px, -7px) rotate(45deg);
+}

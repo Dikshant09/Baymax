@@ -1,20 +1,5 @@
-// import React, { useEffect } from 'react';
-// import { useState } from 'react';
 const GenitalDisease = (props) => 
 {
-    // const[user,setUser]=useState([])
-    // const userData=[
-    // {name:"Abnormal Menstruation"},
-    // {name:"Continuous Feel Of Urine"},
-    // {name:"Dark Urine"},
-    // {name:"Yellow Urine"},
-    // {name:"Polyuria"},
-    // {name:"Burning Micturition"},]
-    
-    // useEffect(()=>{
-    // setUser(userData);
-    // },[]);
-
   return (
     <>
       <label className="checkContainer">Abnormal Menstruation

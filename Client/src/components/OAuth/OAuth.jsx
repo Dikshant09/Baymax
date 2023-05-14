@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
@@ -45,7 +44,7 @@ const OAuth = ({ text }) => {
 
   return (
     <div onClick={onGoogleClick}>
-      {`Sign ${text} via Google`}
+      {`Google`}
     </div>
   );
 };

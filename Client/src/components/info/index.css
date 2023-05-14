@@ -47,7 +47,6 @@ Variables
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
-  --spacing: 0.25rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -90,12 +89,6 @@ ul {
 }
 a {
   text-decoration: none;
-}
-img:not(.logo) {
-  width: 100%;
-}
-img {
-  display: block;
 }
 
 h1,
@@ -383,7 +376,7 @@ Questions
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--ff-secondary);
+  /* font-family: var(--ff-secondary); */
   font-size: 1.2rem;
 }
 .info-error-inner-inner-success{
@@ -398,7 +391,7 @@ Questions
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--ff-secondary);
+  /* font-family: var(--ff-secondary); */
   font-size: 1.2rem;
 
 }
@@ -468,7 +461,7 @@ Variables
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
-  --spacing: 0.25rem;
+  --spacing: 0.125rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);

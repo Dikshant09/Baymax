@@ -1,19 +1,5 @@
-// import React, { useEffect } from 'react';
-// import { useState } from 'react';
 const SkinDisease = (props) => 
 {
-    // const[user,setUser]=useState([])
-    // const userData=[
-    // {name:"Blackheads"},
-    // {name:"Skin Rash"},
-    // {name:"Itching"},
-    // {name:"Internal Itching"},
-    // {name:"Skin Peeling"},]
-
-    // useEffect(()=>{
-    // setUser(userData);
-    // },[]);
-
   return (
     <>
       <label className="checkContainer">Blackheads

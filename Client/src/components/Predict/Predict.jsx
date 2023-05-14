@@ -41,7 +41,6 @@ const Predict = () => {
     const res = await addDoc(collection(db, "reports"), report);
     toast.success('Prediciton Saved Successfully');
   }catch(error){
-    console.log(error.message);
       toast.error('Report not added');
   }
   }

@@ -1,14 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import Spinner from "../Spinner/Spinner";
 import { getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase.config.js";
 
-import { collection, query, where, orderBy, getDocs } from "firebase/firestore";
-import ReportItem from "../ReportItem/ReportItem";
+import {
+  collection,
+  query,
+  where,
+  orderBy,
+  getDocs,
+  startAfter,
+  limit,
+} from "firebase/firestore";
 
+import ReportItem from "../ReportItem/ReportItem";
 import "./Profile.scss";
+import CustomButton from "../CustomButton/CustomButton";
 
 const Profile = () => {
   const auth = getAuth();
@@ -23,20 +32,64 @@ const Profile = () => {
   const { name, email } = formData;
 
   const [loading, setLoading] = useState(false);
+  const [lastFetchedReport, setLastFetchedReport] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
+      try {
+        const userRef = collection(db, "reports");
+
+        const q = query(
+          userRef,
+          where("userRef", "==", auth.currentUser.uid),
+          orderBy("timestamp", "desc"),
+          limit(10)
+        );
+
+        const querySnap = await getDocs(q);
+
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+        setLastFetchedReport(lastVisible);
+
+        let reports = [];
+
+        querySnap.forEach((doc) => {
+          return reports.push({
+            id: doc.id,
+            data: doc.data(),
+          });
+        });
+        setReports(reports);
+        setLoading(false);
+      } catch (e) {
+        toast.error("Couldn't fetch reports...");
+      }
+    };
+
+    fetchUser();
+  }, [auth, auth.currentUser.uid]);
+
+  const onFetchMoreReports = async () => {
+    try {
+      // Get a reference to the reports...
       const userRef = collection(db, "reports");
 
+      // Get a query...
       const q = query(
         userRef,
         where("userRef", "==", auth.currentUser.uid),
-        orderBy("timestamp", "desc")
+        orderBy("timestamp", "desc"),
+        startAfter(lastFetchedReport),
+        limit(10)
       );
 
+      // Execute the query...
       const querySnap = await getDocs(q);
 
-      let reports = [];
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+      setLastFetchedReport(lastVisible);
+
+      const reports = [];
 
       querySnap.forEach((doc) => {
         return reports.push({
@@ -45,16 +98,14 @@ const Profile = () => {
         });
       });
 
-      setReports(reports);
+      setReports((prevState) => [...prevState, ...reports]);
       setLoading(false);
-    };
-
-    fetchUser();
-  }, [auth, auth.currentUser.uid]);
+    } catch (error) {
+      toast.error("Couldn't fetch reports...");
+    }
+  };
 
   const handleLogOut = (e) => {
-    e.preventDefault();
-
     auth.signOut();
 
     navigate("/");
@@ -98,6 +149,12 @@ const Profile = () => {
                 No data found
               </h3>
             </>
+          )}
+          
+          {lastFetchedReport && (
+            <div onClick={onFetchMoreReports}>
+              <CustomButton className="loadMore" text="Load More" route={"/profile"} />
+            </div>
           )}
         </div>
       </div>

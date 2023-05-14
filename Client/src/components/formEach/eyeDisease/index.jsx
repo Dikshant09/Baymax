@@ -1,17 +1,5 @@
-// import React, { useEffect } from 'react';
-// import { useState } from 'react';
 const EyeDisease = (props) => 
 {
-    // const[user,setUser]=useState([])
-    // const userData=[
-    // {name:"Redness Of Eyes"},
-    // {name:"Watering From Eyes"},
-    // {name:"Yellowing Of Eyes"},
-    // {name:"Blurred And Distorted Vision"}]
-    // useEffect(()=>{
-    // setUser(userData);
-  // },[]);
-
   return (
     <>
       <label className="checkContainer">Redness Of Eyes

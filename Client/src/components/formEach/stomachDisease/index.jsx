@@ -1,20 +1,6 @@
 
-// import React, { useEffect } from 'react';
-// import { useState } from 'react';
 const StomachDisease = (props) => 
 {
-    // const[user,setUser]=useState([])
-    // const userData=[
-    // {name:"Swelling Of Stomach"},
-    // {name:"Indigestion"},
-    // {name:"Diarrhoea"},
-    // {name:"Constipation"},
-    // {name:"Stomach Bleeding"},]
-
-    // useEffect(()=>{
-    // setUser(userData);
-    // },[]);
-
   return (
     <>
       <label className="checkContainer">Swelling Of Stomach

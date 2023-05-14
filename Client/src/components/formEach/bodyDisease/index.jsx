@@ -1,8 +1,5 @@
-// import React, { useEffect } from 'react';
-// import { useState } from 'react';
 const BodyDisease = (props) => 
 {
-    // const[user,setUser]=useState([])
     const userData=[
     {name:"Loss Of Appetite"},
     {name:"Loss Of Balance"},
@@ -33,26 +30,8 @@ const BodyDisease = (props) =>
     {name:"Acidity"},
   ]
     
-  //   useEffect(()=>{
-  //     setUser(userData);
-  //   },[]);
-    
   return (
     <>
-    {/* {
-
-      userData.map((item, index) => {
-        console.log(item.name);
-        const { name } = item;
-        return (
-          // <h1 key={index}>{name}</h1>
-          <label className="checkContainer" key={index}>{name}
-          <input type="checkbox" key={index} onChange={(e) =>{props.handleChangeBody(e.target.checked, name)}}/>
-           <span className="checkmark" key={index} ></span>
-       </label>
-          )
-      })
-    } */}
       <label className="checkContainer">Loss Of Appetite
         <input type="checkbox" onChange={(e) =>{props.handleChangeBody(e.target.checked,"Loss Of Appetite")}}/>
         <span className="checkmark"></span>

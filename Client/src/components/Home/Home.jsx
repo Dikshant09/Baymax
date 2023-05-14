@@ -1,5 +1,6 @@
 import { getAuth } from "firebase/auth";
 import React from "react";
+
 import one from "../../assets/1.jpg";
 import two from "../../assets/2.jpg";
 import three from "../../assets/3.jpg";
@@ -13,15 +14,19 @@ const Home = () => {
   const auth = getAuth();
   const homeItems = [
     {
-      text: "One Click Checkup",
+      title: "One Click Checkup",
+      excerpt: "Create a profile now for a quick checkup",
       image: one,
     },
     {
-      text: "Get Instant Report",
+      title: "Quick, Refined & Accurate",
+      excerpt:
+        "Machine Learning models are used to predict the disease, based on symptoms",
       image: two,
     },
     {
-      text: "Quick, Refined & Acurate",
+      title: "Get Instant Report",
+      excerpt: "Go to profile section to check all reports",
       image: three,
       large: true,
     },

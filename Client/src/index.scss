@@ -188,7 +188,7 @@ h3 {
   margin: 0 0 5px 3px;
 }
 
-.btn {
+.btn-bro {
   padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 5px;
@@ -204,37 +204,37 @@ h3 {
   justify-content: center;
 }
 
-.btn svg {
+.btn-bro svg {
   margin-right: 8px;
 }
 
-.btn-reverse {
+.btn-bro-reverse {
   background: #fff;
   color: #000;
 }
 
-.btn-block {
+.btn-bro-block {
   width: 100%;
   margin-bottom: 12px;
 }
 
-.btn-sm {
+.btn-bro-sm {
   padding: 5px 15px;
   font-size: 13px;
 }
 
-.btn-danger {
+.btn-bro-danger {
   background: darkred;
   border: none;
 }
 
-.btn-back {
+.btn-bro-back {
   width: 150px;
   margin-bottom: 20px;
 }
 
-.btn:hover {
-  transform: scale(0.98);
+.btn-bro:hover {
+  // transform: scale(0.98);
 }
 
 .ticket-created {
@@ -308,7 +308,7 @@ h3 {
 }
 
 .ticket-page {
-  position: relative;
+  // position: relative;
   text-align: left;
 }
 
@@ -318,11 +318,11 @@ h3 {
   justify-content: space-between;
 }
 
-.ticket-page .btn {
+.ticket-page .btn-bro {
   margin-bottom: 30px;
 }
 
-.ticket-page .btn-block {
+.ticket-page .btn-bro-block {
   width: 100%;
   margin-top: 30px;
 }
@@ -342,7 +342,7 @@ h3 {
   text-align: left;
   padding: 20px;
   margin-bottom: 20px;
-  position: relative;
+  // position: relative;
 }
 
 .note-head {
@@ -355,7 +355,7 @@ h3 {
 }
 
 .note-date {
-  position: absolute;
+  // position: absolute;
   top: 15px;
   right: 10px;
   font-size: 14px;
@@ -364,23 +364,23 @@ h3 {
 .delete-note {
   color: red;
   cursor: pointer;
-  position: absolute;
+  // position: absolute;
   bottom: 10px;
   right: 20px;
 }
 
-.btn-close {
+.btn-bro-close {
   background: none;
   border: none;
   color: #000;
-  position: absolute;
+  // position: absolute;
   top: 5px;
   right: 5px;
   font-size: 16px;
   cursor: pointer;
 }
 
-.btn-close:hover {
+.btn-bro-close:hover {
   color: red;
   transform: scale(0.98);
 }
@@ -402,13 +402,13 @@ p.status-complete {
 }
 
 footer {
-  position: sticky;
+  // position: sticky;
   top: 95vh;
   text-align: center;
 }
 
 .loadingSpinnerContainer {
-  position: fixed;
+  // position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -488,10 +488,11 @@ footer {
   align-items: center;
   text-align: center;
   text-transform: uppercase;
+  font-weight: 600;
   cursor: pointer;
   // font-size: 1rem;
-  letter-spacing: 0.125rem;
-  // position: relative;
+  // letter-spacing: 0.125rem;
+  // // position: relative;
   
   margin-bottom: 2rem;
   background-color: #000000;
@@ -515,7 +516,7 @@ footer {
     content: "";
     background: #1abc9c;
     display: block;
-    position: absolute;
+    // position: absolute;
     padding-top: 300%;
     padding-left: 350%;
     margin-left: -0.4rem !important;
@@ -537,4 +538,29 @@ footer {
 }
 .bold-bro{
   font-weight: 600;
+}
+
+.success-bracket{
+  width: 100%;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+}
+.success-bracket-now{
+  width: 30%;
+  // background-color: red;
+  text-align: center;
+
+  color: green;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  border: 2px solid green;
+  border-radius: 12px;
+  padding: 0.5rem;
+
+  @media screen and (max-width: 700px) {
+    width: 80%;
+  }
 }
