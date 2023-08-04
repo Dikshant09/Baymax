@@ -22,6 +22,7 @@ import CustomButton from "../CustomButton/CustomButton";
 const Profile = () => {
   const auth = getAuth();
   const navigate = useNavigate();
+  
   const [reports, setReports] = useState(null);
 
   const [formData, setFormData] = useState({

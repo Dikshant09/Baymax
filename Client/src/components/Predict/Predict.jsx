@@ -31,14 +31,14 @@ const Predict = () => {
     e.preventDefault();
 
     const report = {
-      symptoms: String(symptoms).replace(",", ", "),
-      predictions: String(predictions).replace(",", ", "),
+      symptoms: String(symptoms).replaceAll(",", ", "),
+      predictions: String(predictions).replaceAll(",", ", "),
       timestamp: serverTimestamp(),
       userRef: auth.currentUser.uid,
   }
 
   try{
-    const res = await addDoc(collection(db, "reports"), report);
+    await addDoc(collection(db, "reports"), report);
     toast.success('Prediciton Saved Successfully');
   }catch(error){
       toast.error('Report not added');
